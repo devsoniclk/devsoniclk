@@ -120,3 +120,4 @@ $ osiris --status --user devsoniclk
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:dananjarox01@gmail.com)
 
 </div>
+<!-- updated -->
