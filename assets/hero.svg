@@ -1,104 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" font-family="'Georgia','Times New Roman',serif" role="img" aria-label="WANTED — devsoniclk — Dead or Alive">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" role="img" aria-label="devsoniclk — autonomous systems">
   <defs>
-    <linearGradient id="parchment" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#fef3c7"/>
-      <stop offset="0.5" stop-color="#fde68a"/>
-      <stop offset="1" stop-color="#fcd34d"/>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&amp;display=swap');</style>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d97706" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#d97706"/>
+      <stop offset="1" stop-color="#d97706" stop-opacity="0"/>
     </linearGradient>
-    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#f59e0b"/>
-      <stop offset="1" stop-color="#d97706"/>
-    </linearGradient>
-    <filter id="paper">
-      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="5" result="noise"/>
-      <feDiffuseLighting in="noise" lighting-color="#fde68a" surfaceScale="2" result="light">
-        <feDistantLight azimuth="45" elevation="60"/>
-      </feDiffuseLighting>
-      <feComposite in="SourceGraphic" in2="light" operator="multiply"/>
-    </filter>
-    <filter id="aged">
-      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="4" result="noise"/>
-      <feColorMatrix in="noise" type="saturate" values="0" result="gray"/>
-      <feBlend in="SourceGraphic" in2="gray" mode="multiply" result="blended"/>
-      <feComponentTransfer in="blended">
-        <feFuncR type="linear" slope="0.95" intercept="0.03"/>
-        <feFuncG type="linear" slope="0.9" intercept="0.05"/>
-        <feFuncB type="linear" slope="0.8" intercept="0.08"/>
-      </feComponentTransfer>
-    </filter>
-    <clipPath id="poster"><rect x="40" y="20" width="880" height="380" rx="4"/></clipPath>
-    <pattern id="hatch" width="6" height="6" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
-      <line x1="0" y1="0" x2="0" y2="6" stroke="#d97706" stroke-opacity="0.1" stroke-width="1"/>
-    </pattern>
   </defs>
   <style>
-    @keyframes flicker{0%,100%{opacity:1}50%{opacity:.85}}
-    .wanted-txt{animation:flicker 4s ease-in-out infinite}
-    @keyframes stamp{from{transform:scale(1.3) rotate(-15deg);opacity:0}to{transform:scale(1) rotate(-12deg);opacity:1}}
-    .stamp{animation:stamp .5s ease-out both;animation-delay:1.5s}
-    @keyframes fadein{from{opacity:0}to{opacity:1}}
-    .fi{animation:fadein 1s ease-out both}
+    text{font-family:'Lato',sans-serif}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+    .f1{animation:fadeUp .8s ease-out both}
+    .f2{animation:fadeUp .8s ease-out .3s both}
+    .f3{animation:fadeUp .8s ease-out .6s both}
+    .f4{animation:fadeUp .8s ease-out .9s both}
+    .f5{animation:fadeUp .8s ease-out 1.2s both}
+    @keyframes drawLine{from{stroke-dashoffset:200}to{stroke-dashoffset:0}}
+    .line{stroke-dasharray:200;animation:drawLine 1.5s ease-out both}
+    @keyframes softPulse{0%,100%{opacity:.6}50%{opacity:1}}
+    .pulse{animation:softPulse 3s ease-in-out infinite}
   </style>
 
-  <!-- Parchment background -->
-  <g clip-path="url(#poster)">
-    <rect x="40" y="20" width="880" height="380" fill="url(#parchment)" filter="url(#aged)"/>
-    <rect x="40" y="20" width="880" height="380" fill="url(#hatch)"/>
+  <rect width="960" height="280" fill="#fffef9" rx="12"/>
 
-    <!-- Decorative border -->
-    <rect x="52" y="32" width="856" height="356" rx="2" fill="none" stroke="#92400e" stroke-width="2" opacity="0.4"/>
-    <rect x="58" y="38" width="844" height="344" rx="2" fill="none" stroke="#92400e" stroke-width="1" opacity="0.25"/>
-
-    <!-- Corner ornaments -->
-    <circle cx="62" cy="42" r="6" fill="none" stroke="#92400e" stroke-width="1.5" opacity="0.3"/>
-    <circle cx="898" cy="42" r="6" fill="none" stroke="#92400e" stroke-width="1.5" opacity="0.3"/>
-    <circle cx="62" cy="378" r="6" fill="none" stroke="#92400e" stroke-width="1.5" opacity="0.3"/>
-    <circle cx="898" cy="378" r="6" fill="none" stroke="#92400e" stroke-width="1.5" opacity="0.3"/>
-
-    <!-- WANTED header -->
-    <text class="wanted-txt" x="480" y="82" text-anchor="middle" font-size="48" fill="#dc2626" font-weight="bold" letter-spacing="16" font-family="'Impact','Arial Black',sans-serif">WANTED</text>
-    <line x1="180" y1="95" x2="780" y2="95" stroke="#dc2626" stroke-width="2" opacity="0.6"/>
-
-    <!-- Straw Hat illustration -->
-    <g transform="translate(480, 200)">
-      <!-- Hat brim -->
-      <ellipse cx="0" cy="25" rx="70" ry="18" fill="#d97706" stroke="#92400e" stroke-width="2"/>
-      <ellipse cx="0" cy="22" rx="68" ry="16" fill="#f59e0b"/>
-      <!-- Hat dome -->
-      <ellipse cx="0" cy="-5" rx="40" ry="35" fill="#fbbf24" stroke="#92400e" stroke-width="2"/>
-      <ellipse cx="0" cy="-10" rx="36" ry="28" fill="#fcd34d"/>
-      <!-- Hat band -->
-      <rect x="-38" y="8" width="76" height="10" rx="5" fill="#dc2626" stroke="#991b1b" stroke-width="1"/>
-      <!-- Hat highlight -->
-      <ellipse cx="-12" cy="-18" rx="14" ry="10" fill="#fef3c7" opacity="0.4"/>
-    </g>
-
-    <!-- Name -->
-    <text x="480" y="290" text-anchor="middle" font-size="36" fill="#1e293b" font-weight="bold" letter-spacing="8" font-family="'Courier New',monospace">DEVSONICLK</text>
-
-    <!-- Subtitle -->
-    <text x="480" y="320" text-anchor="middle" font-size="14" fill="#92400e" letter-spacing="4" font-family="'Georgia',serif">DEAD OR ALIVE</text>
-
-    <!-- Bounty -->
-    <text x="480" y="360" text-anchor="middle" font-size="22" fill="#059669" font-weight="bold" font-family="'Georgia',serif">
-      <tspan font-size="18">₿</tspan> 3,000,000,000
-    </text>
-
-    <!-- Marine stamp -->
-    <g class="stamp" transform="translate(780, 320)">
-      <rect x="-45" y="-18" width="90" height="36" rx="4" fill="none" stroke="#dc2626" stroke-width="3" opacity="0.7"/>
-      <text x="0" y="6" text-anchor="middle" font-size="14" fill="#dc2626" font-weight="bold" opacity="0.7" font-family="'Impact',sans-serif">APPROVED</text>
-    </g>
-
-    <!-- Jolly Roger watermark -->
-    <g opacity="0.06" transform="translate(480, 200)">
-      <circle cx="0" cy="0" r="80" fill="none" stroke="#000" stroke-width="4"/>
-      <circle cx="-20" cy="-15" r="8" fill="none" stroke="#000" stroke-width="3"/>
-      <circle cx="20" cy="-15" r="8" fill="none" stroke="#000" stroke-width="3"/>
-      <path d="M-25 15 Q0 35 25 15" fill="none" stroke="#000" stroke-width="3"/>
-    </g>
+  <!-- Straw hat — minimal line art -->
+  <g class="f1" transform="translate(480, 72)" opacity="0.12">
+    <ellipse cx="0" cy="10" rx="44" ry="10" fill="none" stroke="#92400e" stroke-width="1.5"/>
+    <ellipse cx="0" cy="0" rx="24" ry="20" fill="none" stroke="#92400e" stroke-width="1.5"/>
+    <rect x="-22" y="4" width="44" height="4" rx="2" fill="#dc2626" opacity="0.5"/>
   </g>
 
-  <!-- Outer frame shadow -->
-  <rect x="38" y="18" width="884" height="384" rx="5" fill="none" stroke="#92400e" stroke-width="3" opacity="0.3"/>
+  <!-- Name -->
+  <text class="f2" x="480" y="130" text-anchor="middle" font-size="42" font-weight="900" fill="#1e293b" letter-spacing="10">devsoniclk</text>
+
+  <!-- Accent line -->
+  <line class="line f3" x1="380" y1="148" x2="580" y2="148" stroke="url(#line)" stroke-width="1.5"/>
+
+  <!-- Tagline -->
+  <text class="f4" x="480" y="178" text-anchor="middle" font-size="14" font-weight="300" fill="#94a3b8" letter-spacing="4">autonomous systems · crypto infrastructure · adversarial security</text>
+
+  <!-- Quote -->
+  <text class="f5" x="480" y="220" text-anchor="middle" font-size="12" fill="#cbd5e1" font-style="italic">"I'm gonna be the King of the Pirates!" — Monkey D. Luffy</text>
+
+  <!-- Bottom line -->
+  <line class="pulse" x1="0" y1="276" x2="960" y2="276" stroke="#d97706" stroke-width="1" opacity="0.15"/>
 </svg>

@@ -1,111 +1,136 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 600" font-family="'Georgia','Times New Roman',serif" role="img" aria-label="Nakama Roster — crew manifest">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 520" role="img" aria-label="fleet — project roster">
   <defs>
-    <linearGradient id="gold2" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#f59e0b"/>
-      <stop offset="1" stop-color="#d97706"/>
-    </linearGradient>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&amp;display=swap');</style>
   </defs>
   <style>
-    @keyframes bounty{0%,100%{opacity:1}50%{opacity:.7}}
-    .bounty{animation:bounty 3s ease-in-out infinite}
-    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-    .dot{animation:pulse 2s ease-in-out infinite}
+    text{font-family:'Lato',sans-serif}
+    @keyframes fadeRow{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:translateX(0)}}
+    .r1{animation:fadeRow .4s ease-out both}
+    .r2{animation:fadeRow .4s ease-out .08s both}
+    .r3{animation:fadeRow .4s ease-out .16s both}
+    .r4{animation:fadeRow .4s ease-out .24s both}
+    .r5{animation:fadeRow .4s ease-out .32s both}
+    .r6{animation:fadeRow .4s ease-out .4s both}
+    .r7{animation:fadeRow .4s ease-out .48s both}
+    .r8{animation:fadeRow .4s ease-out .56s both}
+    .r9{animation:fadeRow .4s ease-out .64s both}
+    @keyframes dotPulse{0%,100%{opacity:.5}50%{opacity:1}}
+    .dp{animation:dotPulse 2.5s ease-in-out infinite}
   </style>
 
-  <!-- Parchment -->
-  <rect x="1" y="1" width="938" height="598" rx="12" fill="#fefce8" stroke="#ca8a04" stroke-opacity="0.3" stroke-width="1.5"/>
+  <rect width="940" height="520" fill="#fffef9" rx="12"/>
 
   <!-- Header -->
-  <text x="36" y="42" font-size="15" letter-spacing="3" fill="#92400e" font-weight="bold">☠ NAKAMA ROSTER</text>
-  <text x="904" y="42" font-size="12" letter-spacing="1.5" fill="#a16207" text-anchor="end">10 CREW MEMBERS · ALL ABOARD</text>
-  <line x1="24" y1="56" x2="916" y2="56" stroke="#ca8a04" stroke-opacity="0.2"/>
+  <text x="36" y="36" font-size="10" font-weight="700" fill="#94a3b8" letter-spacing="3">FLEET — PROJECT ROSTER</text>
+  <text x="904" y="36" font-size="10" fill="#cbd5e1" text-anchor="end">9 active</text>
+  <line x1="36" y1="48" x2="904" y2="48" stroke="#f1f5f9" stroke-width="1"/>
 
-  <!-- Column headers -->
-  <text x="44" y="80" font-size="10" letter-spacing="2" fill="#a16207" font-weight="600">NAME</text>
-  <text x="260" y="80" font-size="10" letter-spacing="2" fill="#a16207" font-weight="600" text-anchor="middle">ROLE</text>
-  <text x="380" y="80" font-size="10" letter-spacing="2" fill="#a16207" font-weight="600">MISSION</text>
-  <text x="904" y="80" font-size="10" letter-spacing="2" fill="#a16207" font-weight="600" text-anchor="end">STATUS</text>
-  <line x1="36" y1="90" x2="904" y2="90" stroke="#e5e7eb" stroke-width="1"/>
+  <!-- Columns -->
+  <text x="52" y="72" font-size="9" font-weight="700" fill="#cbd5e1" letter-spacing="2">PROJECT</text>
+  <text x="280" y="72" font-size="9" font-weight="700" fill="#cbd5e1" letter-spacing="2" text-anchor="middle">ROLE</text>
+  <text x="380" y="72" font-size="9" font-weight="700" fill="#cbd5e1" letter-spacing="2">DESCRIPTION</text>
+  <text x="904" y="72" font-size="9" font-weight="700" fill="#cbd5e1" letter-spacing="2" text-anchor="end">STATUS</text>
+  <line x1="36" y1="82" x2="904" y2="82" stroke="#f8fafc" stroke-width="1"/>
 
   <!-- Row 1: JARVIS -->
-  <circle class="dot" cx="44" cy="112" r="5" fill="#22c55e"/>
-  <text x="60" y="117" font-size="14" letter-spacing="1.5" fill="#1e293b" font-weight="bold">JARVIS</text>
-  <rect x="220" y="100" width="80" height="22" rx="11" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
-  <text x="260" y="116" font-size="10.5" fill="#92400e" text-anchor="middle" font-weight="700">CAPTAIN</text>
-  <text x="380" y="115" font-size="12" fill="#64748b">AI assistant — voice, memory, identity, proactive</text>
-  <text x="904" y="114" font-size="11" letter-spacing="1" fill="#059669" text-anchor="end" font-weight="700">⚓ SAILING</text>
-
-  <!-- Row 2: CRYPTO-TRADING -->
-  <circle class="dot" cx="44" cy="162" r="5" fill="#ef4444" style="animation-delay:-.3s"/>
-  <text x="60" y="167" font-size="14" letter-spacing="1.5" fill="#1e293b" font-weight="bold">CRYPTO-TRADING</text>
-  <rect x="220" y="150" width="80" height="22" rx="11" fill="#fef2f2" stroke="#ef4444" stroke-width="1"/>
-  <text x="260" y="166" font-size="10.5" fill="#dc2626" text-anchor="middle" font-weight="700">WARSHIP</text>
-  <text x="380" y="165" font-size="12" fill="#64748b">Multi-exchange spot/futures execution</text>
-  <text x="904" y="164" font-size="11" letter-spacing="1" fill="#dc2626" text-anchor="end" font-weight="700">🔒 CLASSIFIED</text>
-
-  <!-- Row 3: CRYPTO-ALPHA -->
-  <circle class="dot" cx="44" cy="212" r="5" fill="#ef4444" style="animation-delay:-.6s"/>
-  <text x="60" y="217" font-size="14" letter-spacing="1.5" fill="#1e293b" font-weight="bold">CRYPTO-ALPHA</text>
-  <rect x="220" y="200" width="80" height="22" rx="11" fill="#fef2f2" stroke="#ef4444" stroke-width="1"/>
-  <text x="260" y="216" font-size="10.5" fill="#dc2626" text-anchor="middle" font-weight="700">STEALTH</text>
-  <text x="380" y="215" font-size="12" fill="#64748b">Alpha signals across DeFi and CEX markets</text>
-  <text x="904" y="214" font-size="11" letter-spacing="1" fill="#dc2626" text-anchor="end" font-weight="700">🔒 CLASSIFIED</text>
-
-  <!-- Row 4: NASH-AGENT -->
-  <circle class="dot" cx="44" cy="262" r="5" fill="#22c55e" style="animation-delay:-.9s"/>
-  <text x="60" y="267" font-size="14" letter-spacing="1.5" fill="#1e293b" font-weight="bold">NASH-AGENT</text>
-  <rect x="220" y="250" width="80" height="22" rx="11" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
-  <text x="260" y="266" font-size="10.5" fill="#1d4ed8" text-anchor="middle" font-weight="700">STRATEGIST</text>
-  <text x="380" y="265" font-size="12" fill="#64748b">9-stage game-theoretic decision loop</text>
-  <text x="904" y="264" font-size="11" letter-spacing="1" fill="#059669" text-anchor="end" font-weight="700">⚓ SAILING</text>
-
-  <!-- Row 5: CBW-RADAR -->
-  <circle class="dot" cx="44" cy="312" r="5" fill="#22c55e" style="animation-delay:-1.2s"/>
-  <text x="60" y="317" font-size="14" letter-spacing="1.5" fill="#1e293b" font-weight="bold">CBW-RADAR</text>
-  <rect x="220" y="300" width="80" height="22" rx="11" fill="#f0fdf4" stroke="#22c55e" stroke-width="1"/>
-  <text x="260" y="316" font-size="10.5" fill="#15803d" text-anchor="middle" font-weight="700">LOOKOUT</text>
-  <text x="380" y="315" font-size="12" fill="#64748b">Volume scanner, 28 pairs, 67.7% WR backtest</text>
-  <text x="904" y="314" font-size="11" letter-spacing="1" fill="#059669" text-anchor="end" font-weight="700">⚓ DEPLOYED</text>
-
-  <!-- Row 6: MEMPOOL-SCALPER -->
-  <circle class="dot" cx="44" cy="362" r="5" fill="#f59e0b" style="animation-delay:-1.5s"/>
-  <text x="60" y="367" font-size="14" letter-spacing="1.5" fill="#1e293b" font-weight="bold">MEMPOOL-SCALPER</text>
-  <rect x="220" y="350" width="80" height="22" rx="11" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
-  <text x="260" y="366" font-size="10.5" fill="#b45309" text-anchor="middle" font-weight="700">RAIDER</text>
-  <text x="380" y="365" font-size="12" fill="#64748b">Mempool sniping and MEV detection</text>
-  <text x="904" y="364" font-size="11" letter-spacing="1" fill="#d97706" text-anchor="end" font-weight="700">⚒ BUILDING</text>
-
-  <!-- Row 7: WIFI-3D-MAPPER -->
-  <circle class="dot" cx="44" cy="412" r="5" fill="#22c55e" style="animation-delay:-1.8s"/>
-  <text x="60" y="417" font-size="14" letter-spacing="1.5" fill="#1e293b" font-weight="bold">WIFI-3D-MAPPER</text>
-  <rect x="220" y="400" width="80" height="22" rx="11" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1"/>
-  <text x="260" y="416" font-size="10.5" fill="#7c3aed" text-anchor="middle" font-weight="700">SCOUT</text>
-  <text x="380" y="415" font-size="12" fill="#64748b">WiFi-based 3D spatial human detection</text>
-  <text x="904" y="414" font-size="11" letter-spacing="1" fill="#059669" text-anchor="end" font-weight="700">⚓ SAILING</text>
-
-  <!-- Row 8: CEYLONGEMS -->
-  <circle class="dot" cx="44" cy="462" r="5" fill="#22c55e" style="animation-delay:-2.1s"/>
-  <text x="60" y="467" font-size="14" letter-spacing="1.5" fill="#1e293b" font-weight="bold">CEYLONGEMS</text>
-  <rect x="220" y="450" width="80" height="22" rx="11" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
-  <text x="260" y="466" font-size="10.5" fill="#059669" text-anchor="middle" font-weight="700">TRADER</text>
-  <text x="380" y="465" font-size="12" fill="#64748b">Sri Lankan gemstone marketplace — e-commerce</text>
-  <text x="904" y="464" font-size="11" letter-spacing="1" fill="#059669" text-anchor="end" font-weight="700">⚓ DOCKED</text>
-
-  <!-- Row 9: SOFTWARE-FACTORY -->
-  <circle class="dot" cx="44" cy="512" r="5" fill="#22c55e" style="animation-delay:-2.4s"/>
-  <text x="60" y="517" font-size="14" letter-spacing="1.5" fill="#1e293b" font-weight="bold">SOFTWARE-FACTORY</text>
-  <rect x="220" y="500" width="80" height="22" rx="11" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
-  <text x="260" y="516" font-size="10.5" fill="#1d4ed8" text-anchor="middle" font-weight="700">SHIPWRIGHT</text>
-  <text x="380" y="515" font-size="12" fill="#64748b">Plans in, PRs out — software that builds software</text>
-  <text x="904" y="514" font-size="11" letter-spacing="1" fill="#059669" text-anchor="end" font-weight="700">⚓ SAILING</text>
-
-  <!-- Bottom quote -->
-  <line x1="36" y1="545" x2="904" y2="545" stroke="#e5e7eb" stroke-width="1"/>
-  <text x="470" y="572" font-size="12" fill="#a16207" text-anchor="middle" font-style="italic" font-family="'Georgia',serif">"If you don't take risks, you can't create a future." — Monkey D. Luffy</text>
-
-  <!-- Straw hat watermark -->
-  <g opacity="0.04" transform="translate(800, 300)">
-    <ellipse cx="0" cy="15" rx="60" ry="15" fill="#92400e"/>
-    <ellipse cx="0" cy="0" rx="35" ry="30" fill="#92400e"/>
+  <g class="r1">
+    <circle class="dp" cx="44" cy="104" r="3" fill="#22c55e"/>
+    <text x="58" y="108" font-size="13" font-weight="700" fill="#1e293b">JARVIS</text>
+    <rect x="240" y="92" width="80" height="20" rx="10" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="280" y="106" font-size="10" fill="#64748b" text-anchor="middle">captain</text>
+    <text x="380" y="107" font-size="12" fill="#94a3b8">AI assistant — voice, memory, identity</text>
+    <text x="904" y="106" font-size="10" fill="#16a34a" text-anchor="end" font-weight="700">sailing</text>
   </g>
+  <line x1="36" y1="122" x2="904" y2="122" stroke="#f8fafc" stroke-width="0.5"/>
+
+  <!-- Row 2 -->
+  <g class="r2">
+    <circle class="dp" cx="44" cy="144" r="3" fill="#ef4444" style="animation-delay:-.3s"/>
+    <text x="58" y="148" font-size="13" font-weight="700" fill="#1e293b">CRYPTO-TRADING</text>
+    <rect x="240" y="132" width="80" height="20" rx="10" fill="none" stroke="#fecaca" stroke-width="1"/>
+    <text x="280" y="146" font-size="10" fill="#ef4444" text-anchor="middle">warship</text>
+    <text x="380" y="147" font-size="12" fill="#94a3b8">Multi-exchange spot/futures execution</text>
+    <text x="904" y="146" font-size="10" fill="#dc2626" text-anchor="end" font-weight="700">classified</text>
+  </g>
+  <line x1="36" y1="162" x2="904" y2="162" stroke="#f8fafc" stroke-width="0.5"/>
+
+  <!-- Row 3 -->
+  <g class="r3">
+    <circle class="dp" cx="44" cy="184" r="3" fill="#ef4444" style="animation-delay:-.6s"/>
+    <text x="58" y="188" font-size="13" font-weight="700" fill="#1e293b">CRYPTO-ALPHA</text>
+    <rect x="240" y="172" width="80" height="20" rx="10" fill="none" stroke="#fecaca" stroke-width="1"/>
+    <text x="280" y="186" font-size="10" fill="#ef4444" text-anchor="middle">stealth</text>
+    <text x="380" y="187" font-size="12" fill="#94a3b8">Alpha signals across DeFi and CEX markets</text>
+    <text x="904" y="186" font-size="10" fill="#dc2626" text-anchor="end" font-weight="700">classified</text>
+  </g>
+  <line x1="36" y1="202" x2="904" y2="202" stroke="#f8fafc" stroke-width="0.5"/>
+
+  <!-- Row 4 -->
+  <g class="r4">
+    <circle class="dp" cx="44" cy="224" r="3" fill="#22c55e" style="animation-delay:-.9s"/>
+    <text x="58" y="228" font-size="13" font-weight="700" fill="#1e293b">NASH-AGENT</text>
+    <rect x="240" y="212" width="80" height="20" rx="10" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="280" y="226" font-size="10" fill="#64748b" text-anchor="middle">strategist</text>
+    <text x="380" y="227" font-size="12" fill="#94a3b8">9-stage game-theoretic decision loop</text>
+    <text x="904" y="226" font-size="10" fill="#16a34a" text-anchor="end" font-weight="700">sailing</text>
+  </g>
+  <line x1="36" y1="242" x2="904" y2="242" stroke="#f8fafc" stroke-width="0.5"/>
+
+  <!-- Row 5 -->
+  <g class="r5">
+    <circle class="dp" cx="44" cy="264" r="3" fill="#22c55e" style="animation-delay:-1.2s"/>
+    <text x="58" y="268" font-size="13" font-weight="700" fill="#1e293b">CBW-RADAR</text>
+    <rect x="240" y="252" width="80" height="20" rx="10" fill="none" stroke="#bbf7d0" stroke-width="1"/>
+    <text x="280" y="266" font-size="10" fill="#16a34a" text-anchor="middle">lookout</text>
+    <text x="380" y="267" font-size="12" fill="#94a3b8">Volume scanner, 28 pairs, 67.7% WR backtest</text>
+    <text x="904" y="266" font-size="10" fill="#16a34a" text-anchor="end" font-weight="700">deployed</text>
+  </g>
+  <line x1="36" y1="282" x2="904" y2="282" stroke="#f8fafc" stroke-width="0.5"/>
+
+  <!-- Row 6 -->
+  <g class="r6">
+    <circle class="dp" cx="44" cy="304" r="3" fill="#f59e0b" style="animation-delay:-1.5s"/>
+    <text x="58" y="308" font-size="13" font-weight="700" fill="#1e293b">MEMPOOL-SCALPER</text>
+    <rect x="240" y="292" width="80" height="20" rx="10" fill="none" stroke="#fef3c7" stroke-width="1"/>
+    <text x="280" y="306" font-size="10" fill="#d97706" text-anchor="middle">raider</text>
+    <text x="380" y="307" font-size="12" fill="#94a3b8">Mempool sniping and MEV detection</text>
+    <text x="904" y="306" font-size="10" fill="#d97706" text-anchor="end" font-weight="700">building</text>
+  </g>
+  <line x1="36" y1="322" x2="904" y2="322" stroke="#f8fafc" stroke-width="0.5"/>
+
+  <!-- Row 7 -->
+  <g class="r7">
+    <circle class="dp" cx="44" cy="344" r="3" fill="#22c55e" style="animation-delay:-1.8s"/>
+    <text x="58" y="348" font-size="13" font-weight="700" fill="#1e293b">WIFI-3D-MAPPER</text>
+    <rect x="240" y="332" width="80" height="20" rx="10" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="280" y="346" font-size="10" fill="#64748b" text-anchor="middle">scout</text>
+    <text x="380" y="347" font-size="12" fill="#94a3b8">WiFi-based 3D spatial human detection</text>
+    <text x="904" y="346" font-size="10" fill="#16a34a" text-anchor="end" font-weight="700">sailing</text>
+  </g>
+  <line x1="36" y1="362" x2="904" y2="362" stroke="#f8fafc" stroke-width="0.5"/>
+
+  <!-- Row 8 -->
+  <g class="r8">
+    <circle class="dp" cx="44" cy="384" r="3" fill="#22c55e" style="animation-delay:-2.1s"/>
+    <text x="58" y="388" font-size="13" font-weight="700" fill="#1e293b">CEYLONGEMS</text>
+    <rect x="240" y="372" width="80" height="20" rx="10" fill="none" stroke="#bbf7d0" stroke-width="1"/>
+    <text x="280" y="386" font-size="10" fill="#16a34a" text-anchor="middle">trader</text>
+    <text x="380" y="387" font-size="12" fill="#94a3b8">Sri Lankan gemstone marketplace — e-commerce</text>
+    <text x="904" y="386" font-size="10" fill="#16a34a" text-anchor="end" font-weight="700">docked</text>
+  </g>
+  <line x1="36" y1="402" x2="904" y2="402" stroke="#f8fafc" stroke-width="0.5"/>
+
+  <!-- Row 9 -->
+  <g class="r9">
+    <circle class="dp" cx="44" cy="424" r="3" fill="#22c55e" style="animation-delay:-2.4s"/>
+    <text x="58" y="428" font-size="13" font-weight="700" fill="#1e293b">SOFTWARE-FACTORY</text>
+    <rect x="240" y="412" width="80" height="20" rx="10" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="280" y="426" font-size="10" fill="#64748b" text-anchor="middle">shipwright</text>
+    <text x="380" y="427" font-size="12" fill="#94a3b8">Plans in, PRs out — software that builds software</text>
+    <text x="904" y="426" font-size="10" fill="#16a34a" text-anchor="end" font-weight="700">sailing</text>
+  </g>
+
+  <!-- Footer -->
+  <line x1="36" y1="455" x2="904" y2="455" stroke="#f1f5f9" stroke-width="1"/>
+  <text x="470" y="485" font-size="11" fill="#cbd5e1" text-anchor="middle" font-style="italic">"If you don't take risks, you can't create a future." — Monkey D. Luffy</text>
 </svg>

@@ -1,11 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 100" font-family="'Georgia','Times New Roman',serif" role="img" aria-label="Pirate King's Log">
-  <style>@keyframes blink{0%,45%{opacity:1}50%,100%{opacity:0}}.cur{animation:blink 1.1s steps(1) infinite}</style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 80" role="img" aria-label="ship log status">
+  <defs>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&amp;display=swap');</style>
+  </defs>
+  <style>
+    text{font-family:'Lato',sans-serif}
+    @keyframes blink{0%,45%{opacity:1}50%,100%{opacity:0}}
+    .cur{animation:blink 1.1s steps(1) infinite}
+  </style>
 
-  <rect x="1" y="1" width="938" height="98" rx="12" fill="#fefce8" stroke="#ca8a04" stroke-opacity="0.3" stroke-width="1.5"/>
-
-  <!-- Log header -->
-  <text x="36" y="34" font-size="13" letter-spacing="2" fill="#92400e" font-weight="bold">📓 PIRATE KING'S LOG</text>
-
-  <text x="52" y="58" font-size="12" fill="#78716c" font-family="monospace">&gt; 19 vessels sailing under the straw hat flag</text>
-  <text x="52" y="78" font-size="12" fill="#78716c" font-family="monospace">&gt; armament: Python · TypeScript · JavaScript · all systems operational <tspan fill="#ca8a04" class="cur">█</tspan></text>
+  <rect width="940" height="80" fill="#fffef9" rx="12"/>
+  <text x="36" y="30" font-size="10" font-weight="700" fill="#94a3b8" letter-spacing="3">SHIP LOG</text>
+  <text x="52" y="55" font-size="12" fill="#94a3b8" font-weight="300" font-family="'Lato',monospace">19 vessels sailing · Python · TypeScript · JavaScript · all systems operational <tspan fill="#d97706" class="cur">█</tspan></text>
 </svg>
