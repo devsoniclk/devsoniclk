@@ -24,6 +24,12 @@
 
 <br>
 
-<img src="assets/footer.svg" alt="connect with devsoniclk" width="100%">
+<img src="assets/footer.svg" alt="connect" width="100%">
+
+<br>
+
+[![X](https://img.shields.io/badge/follow-000000?style=flat&logo=x&logoColor=white)](https://x.com/BeingDananjaye)
+[![LinkedIn](https://img.shields.io/badge/connect-0077B5?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/lakshitha-dananjaya)
+[![Email](https://img.shields.io/badge/email-D14836?style=flat&logo=gmail&logoColor=white)](mailto:dananjarox01@gmail.com)
 
 </div>
