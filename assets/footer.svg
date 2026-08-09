@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 120" role="img" aria-label="connect with devsoniclk">
+  <defs>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&amp;display=swap');</style>
+    <linearGradient id="quoteLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d97706" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#d97706" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#d97706" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <style>
+    text{font-family:'Lato',sans-serif}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    .q{animation:fadeIn 1s ease-out both}
+    @keyframes slideUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    .b1{animation:slideUp .5s ease-out 1.2s both}
+    .b2{animation:slideUp .5s ease-out 1.4s both}
+    .b3{animation:slideUp .5s ease-out 1.6s both}
+    @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+    .btn-shine{fill:url(#shine);opacity:0;transition:opacity .3s}
+    g:hover .btn-shine{opacity:0.15}
+    @keyframes pulse{0%,100%{opacity:.8}50%{opacity:1}}
+    .icon{animation:pulse 3s ease-in-out infinite}
+  </style>
+
+  <rect width="940" height="120" fill="#fffef9" rx="12" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Quote -->
+  <g class="q">
+    <line x1="380" y1="20" x2="560" y2="20" stroke="url(#quoteLine)" stroke-width="1"/>
+    <text x="470" y="50" text-anchor="middle" font-size="12" fill="#94a3b8" font-style="italic" font-weight="300">"I don't want to conquer anything. I just think the guy</text>
+    <text x="470" y="66" text-anchor="middle" font-size="12" fill="#94a3b8" font-style="italic" font-weight="300">with the most freedom is the Pirate King."</text>
+    <text x="470" y="84" text-anchor="middle" font-size="10" fill="#cbd5e1" font-weight="400">— Monkey D. Luffy</text>
+    <line x1="380" y1="94" x2="560" y2="94" stroke="url(#quoteLine)" stroke-width="1"/>
+  </g>
+
+  <!-- X (Twitter) Button -->
+  <a href="https://x.com/BeingDananjaye">
+    <g class="b1" transform="translate(340, 100)">
+      <rect x="0" y="0" width="72" height="22" rx="11" fill="#1DA1F2" opacity="0.9"/>
+      <!-- X logo -->
+      <g class="icon" transform="translate(12, 5)">
+        <path d="M2,0 L5.5,4.5 L10,0 L12,0 L7,6 L12,12 L10,12 L5.5,7.5 L1,12 L-1,12 L4,6 L-1,0 Z" fill="white" transform="scale(0.85) translate(1,0)"/>
+      </g>
+      <text x="48" y="15" font-size="10" fill="white" text-anchor="middle" font-weight="700">follow</text>
+    </g>
+  </a>
+
+  <!-- Email Button -->
+  <a href="mailto:dananjarox01@gmail.com">
+    <g class="b2" transform="translate(420, 100)">
+      <rect x="0" y="0" width="72" height="22" rx="11" fill="#D14836" opacity="0.9"/>
+      <!-- Email icon -->
+      <g class="icon" transform="translate(10, 4)">
+        <rect x="0" y="1" width="12" height="9" rx="1.5" fill="none" stroke="white" stroke-width="1.2"/>
+        <polyline points="0,1 6,6 12,1" fill="none" stroke="white" stroke-width="1.2"/>
+      </g>
+      <text x="48" y="15" font-size="10" fill="white" text-anchor="middle" font-weight="700">email</text>
+    </g>
+  </a>
+
+  <!-- LinkedIn Button -->
+  <a href="https://linkedin.com/in/lakshitha-dananjaya">
+    <g class="b3" transform="translate(500, 100)">
+      <rect x="0" y="0" width="80" height="22" rx="11" fill="#0077B5" opacity="0.9"/>
+      <!-- LinkedIn icon -->
+      <g class="icon" transform="translate(10, 3)">
+        <rect x="0" y="6" width="2.5" height="8" fill="white"/>
+        <circle cx="1.25" cy="3" r="1.5" fill="white"/>
+        <path d="M5,6 L7.5,6 L7.5,14 L5,14 Z" fill="white"/>
+        <path d="M5,8.5 C5,7 6.5,6.5 7.5,7.5 L7.5,6 C6.5,5.5 5,6 5,8.5 Z" fill="white" opacity="0"/>
+        <path d="M8,6 L10.5,6 C11.5,6 13,7 13,9 L13,14 L10.5,14 L10.5,9.5 C10.5,8.5 10,8 9.5,8 C8.5,8 8,8.5 8,9.5 L8,14 L5.5,14 L5.5,6 Z" fill="white"/>
+      </g>
+      <text x="52" y="15" font-size="10" fill="white" text-anchor="middle" font-weight="700">connect</text>
+    </g>
+  </a>
+</svg>

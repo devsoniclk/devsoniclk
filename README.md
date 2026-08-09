@@ -22,14 +22,8 @@
 
 <img src="assets/stack.svg" alt="tech stack" width="100%">
 
-<br><br>
+<br>
 
-<sub><i>"I don't want to conquer anything. I just think the guy with the most freedom is the Pirate King."</i> — Monkey D. Luffy</sub>
-
-<br><br>
-
-[![Twitter](https://img.shields.io/badge/follow-1DA1F2?style=flat&logo=twitter&logoColor=white)](https://twitter.com/BeingDananjaye)
-[![Email](https://img.shields.io/badge/email-D14836?style=flat&logo=gmail&logoColor=white)](mailto:dananjarox01@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/connect-0077B5?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/lakshitha-dananjaya)
+<img src="assets/footer.svg" alt="connect with devsoniclk" width="100%">
 
 </div>
