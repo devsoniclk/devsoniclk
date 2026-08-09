@@ -23,13 +23,6 @@
 
   <rect width="960" height="280" fill="#fffef9" rx="12"/>
 
-  <!-- Straw hat — minimal line art -->
-  <g class="f1" transform="translate(480, 72)" opacity="0.12">
-    <ellipse cx="0" cy="10" rx="44" ry="10" fill="none" stroke="#92400e" stroke-width="1.5"/>
-    <ellipse cx="0" cy="0" rx="24" ry="20" fill="none" stroke="#92400e" stroke-width="1.5"/>
-    <rect x="-22" y="4" width="44" height="4" rx="2" fill="#dc2626" opacity="0.5"/>
-  </g>
-
   <!-- Name -->
   <text class="f2" x="480" y="130" text-anchor="middle" font-size="42" font-weight="900" fill="#1e293b" letter-spacing="10">devsoniclk</text>
 
