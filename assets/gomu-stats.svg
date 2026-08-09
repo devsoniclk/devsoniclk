@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 180" font-family="'Georgia','Times New Roman',serif" role="img" aria-label="Gomu Gomu stats">
+  <defs>
+    <filter id="bounce-shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#f59e0b" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <style>
+    @keyframes bounce{0%,100%{transform:translateY(0)}30%{transform:translateY(-12px)}50%{transform:translateY(0)}70%{transform:translateY(-6px)}90%{transform:translateY(0)}}
+    .b{animation:bounce 2s ease-in-out infinite}
+    @keyframes stretch{0%,100%{transform:scaleX(1)}50%{transform:scaleX(1.05)}}
+    .s{animation:stretch 3s ease-in-out infinite}
+  </style>
+
+  <!-- Parchment -->
+  <rect x="1" y="1" width="938" height="178" rx="12" fill="#fefce8" stroke="#ca8a04" stroke-opacity="0.3" stroke-width="1.5"/>
+
+  <!-- Header -->
+  <text x="36" y="36" font-size="14" letter-spacing="3" fill="#92400e" font-weight="bold">👊 GOMU GOMU NO — POWER LEVEL</text>
+
+  <!-- Stat 1: Repos -->
+  <g class="b" style="animation-delay:0s">
+    <text x="36" y="75" font-size="10" letter-spacing="2" fill="#a16207">PUBLIC REPOS</text>
+    <text x="36" y="110" font-size="36" fill="#b45309" font-weight="bold" filter="url(#bounce-shadow)">19</text>
+  </g>
+
+  <!-- Stat 2: Stars -->
+  <g class="b" style="animation-delay:0.2s">
+    <text x="180" y="75" font-size="10" letter-spacing="2" fill="#a16207">TOTAL STARS</text>
+    <text x="180" y="110" font-size="36" fill="#b45309" font-weight="bold" filter="url(#bounce-shadow)">31</text>
+  </g>
+
+  <!-- Stat 3: Languages -->
+  <g class="b" style="animation-delay:0.4s">
+    <text x="324" y="75" font-size="10" letter-spacing="2" fill="#a16207">LANGUAGES</text>
+    <text x="324" y="110" font-size="36" fill="#b45309" font-weight="bold" filter="url(#bounce-shadow)">5</text>
+    <text x="360" y="110" font-size="14" fill="#a16207">active</text>
+  </g>
+
+  <!-- Stat 4: Primary -->
+  <g class="b" style="animation-delay:0.6s">
+    <text x="460" y="75" font-size="10" letter-spacing="2" fill="#a16207">PRIMARY</text>
+    <text x="460" y="106" font-size="24" fill="#92400e" font-weight="bold">PYTHON</text>
+  </g>
+
+  <!-- Stat 5: Location -->
+  <g class="b" style="animation-delay:0.8s">
+    <text x="620" y="75" font-size="10" letter-spacing="2" fill="#a16207">HOME ISLAND</text>
+    <text x="620" y="106" font-size="24" fill="#92400e" font-weight="bold">SRI LANKA</text>
+  </g>
+
+  <!-- Deployment fleet badges -->
+  <text x="36" y="145" font-size="10" letter-spacing="2" fill="#a16207">DEPLOYMENT FLEET</text>
+  <g class="s" style="animation-delay:0s">
+    <rect x="190" y="130" width="68" height="22" rx="11" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+    <text x="224" y="145" font-size="10" fill="#92400e" text-anchor="middle" font-weight="600">Fly.io</text>
+  </g>
+  <g class="s" style="animation-delay:0.3s">
+    <rect x="266" y="130" width="82" height="22" rx="11" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+    <text x="307" y="145" font-size="10" fill="#92400e" text-anchor="middle" font-weight="600">Supabase</text>
+  </g>
+  <g class="s" style="animation-delay:0.6s">
+    <rect x="356" y="130" width="68" height="22" rx="11" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+    <text x="390" y="145" font-size="10" fill="#92400e" text-anchor="middle" font-weight="600">Binance</text>
+  </g>
+  <g class="s" style="animation-delay:0.9s">
+    <rect x="432" y="130" width="76" height="22" rx="11" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+    <text x="470" y="145" font-size="10" fill="#92400e" text-anchor="middle" font-weight="600">Telegram</text>
+  </g>
+
+  <!-- Status -->
+  <text x="560" y="145" font-size="11" fill="#78716c" font-family="monospace">ALL SYSTEMS OPERATIONAL <tspan fill="#22c55e">●</tspan></text>
+</svg>
