@@ -10,65 +10,71 @@
     .c3{animation:countUp .5s ease-out .3s both}
     .c4{animation:countUp .5s ease-out .45s both}
     .c5{animation:countUp .5s ease-out .6s both}
-    @keyframes softGlow{0%,100%{filter:drop-shadow(0 0 0 transparent)}50%{filter:drop-shadow(0 0 6px rgba(217,119,6,.15))}}
-    .glow{animation:softGlow 4s ease-in-out infinite}
+    .c6{animation:countUp .5s ease-out .75s both}
   </style>
 
   <rect width="940" height="160" fill="#fffef9" rx="12"/>
 
   <!-- Divider dots -->
-  <circle cx="180" cy="55" r="1.5" fill="#e2e8f0"/>
-  <circle cx="180" cy="75" r="1.5" fill="#e2e8f0"/>
-  <circle cx="180" cy="95" r="1.5" fill="#e2e8f0"/>
-  <circle cx="360" cy="55" r="1.5" fill="#e2e8f0"/>
-  <circle cx="360" cy="75" r="1.5" fill="#e2e8f0"/>
-  <circle cx="360" cy="95" r="1.5" fill="#e2e8f0"/>
-  <circle cx="500" cy="55" r="1.5" fill="#e2e8f0"/>
-  <circle cx="500" cy="75" r="1.5" fill="#e2e8f0"/>
-  <circle cx="500" cy="95" r="1.5" fill="#e2e8f0"/>
+  <circle cx="165" cy="55" r="1.5" fill="#e2e8f0"/>
+  <circle cx="165" cy="75" r="1.5" fill="#e2e8f0"/>
+  <circle cx="165" cy="95" r="1.5" fill="#e2e8f0"/>
+  <circle cx="310" cy="55" r="1.5" fill="#e2e8f0"/>
+  <circle cx="310" cy="75" r="1.5" fill="#e2e8f0"/>
+  <circle cx="310" cy="95" r="1.5" fill="#e2e8f0"/>
+  <circle cx="470" cy="55" r="1.5" fill="#e2e8f0"/>
+  <circle cx="470" cy="75" r="1.5" fill="#e2e8f0"/>
+  <circle cx="470" cy="95" r="1.5" fill="#e2e8f0"/>
+  <circle cx="620" cy="55" r="1.5" fill="#e2e8f0"/>
+  <circle cx="620" cy="75" r="1.5" fill="#e2e8f0"/>
+  <circle cx="620" cy="95" r="1.5" fill="#e2e8f0"/>
 
   <!-- REPOS -->
   <g class="c1">
     <text x="36" y="52" font-size="10" font-weight="700" fill="#94a3b8" letter-spacing="3">REPOS</text>
-    <text x="36" y="92" font-size="38" font-weight="900" fill="#1e293b">19</text>
+    <text x="36" y="92" font-size="38" font-weight="900" fill="#1e293b">77</text>
+  </g>
+
+  <!-- CONTRIBUTIONS (last year) -->
+  <g class="c2">
+    <text x="185" y="52" font-size="10" font-weight="700" fill="#94a3b8" letter-spacing="3">LAST YEAR</text>
+    <text x="185" y="92" font-size="38" font-weight="900" fill="#1e293b">426</text>
   </g>
 
   <!-- STARS -->
-  <g class="c2">
-    <text x="200" y="52" font-size="10" font-weight="700" fill="#94a3b8" letter-spacing="3">STARS</text>
-    <text x="200" y="92" font-size="38" font-weight="900" fill="#1e293b">31</text>
+  <g class="c3">
+    <text x="330" y="52" font-size="10" font-weight="700" fill="#94a3b8" letter-spacing="3">STARS</text>
+    <text x="330" y="92" font-size="38" font-weight="900" fill="#1e293b">14</text>
   </g>
 
-  <!-- LANGUAGES -->
-  <g class="c3">
-    <text x="380" y="52" font-size="10" font-weight="700" fill="#94a3b8" letter-spacing="3">LANGUAGES</text>
-    <text x="380" y="92" font-size="38" font-weight="900" fill="#1e293b">5</text>
+  <!-- YEARS -->
+  <g class="c4">
+    <text x="490" y="52" font-size="10" font-weight="700" fill="#94a3b8" letter-spacing="3">YEARS</text>
+    <text x="490" y="92" font-size="38" font-weight="900" fill="#d97706">9</text>
   </g>
 
   <!-- PRIMARY -->
-  <g class="c4">
-    <text x="520" y="52" font-size="10" font-weight="700" fill="#94a3b8" letter-spacing="3">PRIMARY</text>
-    <text x="520" y="88" font-size="24" font-weight="700" fill="#d97706">Python</text>
+  <g class="c5">
+    <text x="640" y="52" font-size="10" font-weight="700" fill="#94a3b8" letter-spacing="3">PRIMARY</text>
+    <text x="640" y="88" font-size="24" font-weight="700" fill="#d97706">Python</text>
   </g>
 
   <!-- LOCATION -->
-  <g class="c5">
-    <text x="680" y="52" font-size="10" font-weight="700" fill="#94a3b8" letter-spacing="3">LOCATION</text>
-    <text x="680" y="88" font-size="24" font-weight="700" fill="#d97706">Sri Lanka</text>
+  <g class="c6">
+    <text x="800" y="52" font-size="10" font-weight="700" fill="#94a3b8" letter-spacing="3">HOME</text>
+    <text x="800" y="88" font-size="24" font-weight="700" fill="#d97706">Sri Lanka</text>
   </g>
 
   <!-- Deployment row -->
-  <g class="glow">
-    <text x="36" y="135" font-size="10" font-weight="700" fill="#94a3b8" letter-spacing="3">DEPLOYMENTS</text>
-    <rect x="150" y="120" width="60" height="22" rx="11" fill="none" stroke="#e2e8f0" stroke-width="1"/>
-    <text x="180" y="135" font-size="11" fill="#64748b" text-anchor="middle" font-weight="400">Fly.io</text>
-    <rect x="218" y="120" width="74" height="22" rx="11" fill="none" stroke="#e2e8f0" stroke-width="1"/>
-    <text x="255" y="135" font-size="11" fill="#64748b" text-anchor="middle" font-weight="400">Supabase</text>
-    <rect x="300" y="120" width="60" height="22" rx="11" fill="none" stroke="#e2e8f0" stroke-width="1"/>
-    <text x="330" y="135" font-size="11" fill="#64748b" text-anchor="middle" font-weight="400">Binance</text>
-    <rect x="368" y="120" width="68" height="22" rx="11" fill="none" stroke="#e2e8f0" stroke-width="1"/>
-    <text x="402" y="135" font-size="11" fill="#64748b" text-anchor="middle" font-weight="400">Telegram</text>
-  </g>
+  <text x="36" y="135" font-size="10" font-weight="700" fill="#94a3b8" letter-spacing="3">DEPLOYMENTS</text>
+  <rect x="155" y="120" width="60" height="22" rx="11" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="185" y="135" font-size="11" fill="#64748b" text-anchor="middle" font-weight="400">Fly.io</text>
+  <rect x="223" y="120" width="74" height="22" rx="11" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="260" y="135" font-size="11" fill="#64748b" text-anchor="middle" font-weight="400">Supabase</text>
+  <rect x="305" y="120" width="60" height="22" rx="11" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="335" y="135" font-size="11" fill="#64748b" text-anchor="middle" font-weight="400">Binance</text>
+  <rect x="373" y="120" width="68" height="22" rx="11" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="407" y="135" font-size="11" fill="#64748b" text-anchor="middle" font-weight="400">Telegram</text>
 
   <!-- Status -->
   <text x="880" y="135" font-size="11" fill="#94a3b8" text-anchor="end">all systems operational <tspan fill="#22c55e">●</tspan></text>

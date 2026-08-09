@@ -1,60 +1,144 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 200" role="img" aria-label="Grand Line — contribution chart">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 320" role="img" aria-label="Grand Line — contribution journey since 2018">
   <defs>
     <style>@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&amp;display=swap');</style>
-    <linearGradient id="fadeLine" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#d97706" stop-opacity="0"/>
-      <stop offset="0.2" stop-color="#d97706" stop-opacity="1"/>
-      <stop offset="0.8" stop-color="#d97706" stop-opacity="1"/>
-      <stop offset="1" stop-color="#d97706" stop-opacity="0"/>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f0f9ff" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#e0f2fe" stop-opacity="0.5"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f59e0b"/>
+      <stop offset="1" stop-color="#d97706"/>
     </linearGradient>
   </defs>
   <style>
     text{font-family:'Lato',sans-serif}
-    @keyframes drawPath{from{stroke-dashoffset:800}to{stroke-dashoffset:0}}
-    .route{stroke-dasharray:800;animation:drawPath 3s ease-out both}
-    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-    .dot{animation:fadeIn .4s ease-out both}
-    @keyframes gentlePulse{0%,100%{r:3;opacity:.6}50%{r:5;opacity:1}}
-    .isle{animation:gentlePulse 3s ease-in-out infinite}
+    @keyframes drawRoute{from{stroke-dashoffset:1200}to{stroke-dashoffset:0}}
+    .route{stroke-dasharray:1200;animation:drawRoute 4s ease-out both}
+    @keyframes islandPop{from{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}
+    .isle{animation:islandPop .4s ease-out both}
+    @keyframes barGrow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+    .bar{transform-box:fill-box;transform-origin:bottom;animation:barGrow .6s ease-out both}
+    @keyframes shipSail{from{offset-distance:0%}to{offset-distance:100%}}
+    .ship{offset-path:path('M80,240 C150,220 200,180 280,190 C360,200 380,140 460,150 C540,160 560,100 640,120 C720,140 740,80 820,100 C860,110 880,90 900,100');animation:shipSail 15s linear infinite}
+    @keyframes gentlePulse{0%,100%{opacity:.6}50%{opacity:1}}
+    .gp{animation:gentlePulse 3s ease-in-out infinite}
   </style>
 
-  <rect width="940" height="200" fill="#fffef9" rx="12"/>
+  <rect width="940" height="320" fill="#fffef9" rx="12"/>
 
-  <!-- Section label -->
-  <text x="36" y="30" font-size="10" font-weight="700" fill="#94a3b8" letter-spacing="3">CONTRIBUTIONS — LAST 14 DAYS</text>
+  <!-- Sea wash -->
+  <rect x="20" y="60" width="900" height="220" rx="8" fill="url(#sea)" opacity="0.4"/>
 
-  <!-- Thin grid -->
-  <line x1="36" y1="170" x2="900" y2="170" stroke="#f1f5f9" stroke-width="1"/>
-  <line x1="36" y1="130" x2="900" y2="130" stroke="#f1f5f9" stroke-width="0.5" stroke-dasharray="4 4"/>
-  <line x1="36" y1="90" x2="900" y2="90" stroke="#f1f5f9" stroke-width="0.5" stroke-dasharray="4 4"/>
+  <!-- Header -->
+  <text x="36" y="32" font-size="10" font-weight="700" fill="#94a3b8" letter-spacing="3">GRAND LINE — CONTRIBUTION JOURNEY</text>
+  <text x="904" y="32" font-size="10" fill="#cbd5e1" text-anchor="end">77 repos · 426 contributions last year · sailing since 2018</text>
 
-  <!-- Activity bars — minimal -->
-  <rect class="dot" style="animation-delay:0.1s" x="50"  y="152" width="24" height="18" rx="4" fill="#d97706" opacity="0.20"/>
-  <rect class="dot" style="animation-delay:0.15s" x="112" y="142" width="24" height="28" rx="4" fill="#d97706" opacity="0.30"/>
-  <rect class="dot" style="animation-delay:0.2s" x="174" y="128" width="24" height="42" rx="4" fill="#d97706" opacity="0.45"/>
-  <rect class="dot" style="animation-delay:0.25s" x="236" y="112" width="24" height="58" rx="4" fill="#d97706" opacity="0.60"/>
-  <rect class="dot" style="animation-delay:0.3s" x="298" y="98" width="24" height="72" rx="4" fill="#d97706" opacity="0.75"/>
-  <rect class="dot" style="animation-delay:0.35s" x="360" y="80" width="24" height="90" rx="4" fill="#d97706" opacity="1.00"/>
-  <rect class="dot" style="animation-delay:0.4s" x="422" y="105" width="24" height="65" rx="4" fill="#d97706" opacity="0.70"/>
-  <rect class="dot" style="animation-delay:0.45s" x="484" y="118" width="24" height="52" rx="4" fill="#d97706" opacity="0.55"/>
-  <rect class="dot" style="animation-delay:0.5s" x="546" y="108" width="24" height="62" rx="4" fill="#d97706" opacity="0.65"/>
-  <rect class="dot" style="animation-delay:0.55s" x="608" y="125" width="24" height="45" rx="4" fill="#d97706" opacity="0.50"/>
-  <rect class="dot" style="animation-delay:0.6s" x="670" y="115" width="24" height="55" rx="4" fill="#d97706" opacity="0.60"/>
-  <rect class="dot" style="animation-delay:0.65s" x="732" y="95" width="24" height="75" rx="4" fill="#d97706" opacity="0.80"/>
-  <rect class="dot" style="animation-delay:0.7s" x="794" y="85" width="24" height="85" rx="4" fill="#d97706" opacity="0.90"/>
-  <rect class="dot" style="animation-delay:0.75s" x="856" y="92" width="24" height="78" rx="4" fill="#d97706" opacity="0.85"/>
+  <!-- Route path -->
+  <path class="route" d="M80,240 C150,220 200,180 280,190 C360,200 380,140 460,150 C540,160 560,100 640,120 C720,140 740,80 820,100 C860,110 880,90 900,100"
+        fill="none" stroke="#d97706" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.4"/>
 
-  <!-- Route line overlay -->
-  <path class="route" d="M62,155 C90,148 124,142 186,130 C248,118 310,100 372,82 C434,108 496,120 558,110 C620,128 682,118 744,98 C806,88 868,95 880,95"
-        fill="none" stroke="url(#fadeLine)" stroke-width="1.5" opacity="0.5"/>
+  <!-- Animated ship -->
+  <g class="ship">
+    <polygon points="0,-6 4,6 -4,6" fill="#92400e" stroke="#78350f" stroke-width="0.8"/>
+    <line x1="0" y1="-6" x2="0" y2="-11" stroke="#78350f" stroke-width="1"/>
+    <rect x="-1" y="-15" width="6" height="5" rx="1" fill="#dc2626" opacity="0.8"/>
+  </g>
 
-  <!-- Island markers -->
-  <circle class="isle" cx="372" cy="80" r="3" fill="#d97706" style="animation-delay:0s"/>
-  <circle class="isle" cx="794" cy="85" r="3" fill="#d97706" style="animation-delay:1s"/>
-  <circle class="isle" cx="880" cy="92" r="4" fill="#22c55e" style="animation-delay:2s"/>
+  <!-- Islands & Bars — year-wise journey -->
+
+  <!-- 2018: East Blue — Account created -->
+  <g class="isle" style="animation-delay:0.2s">
+    <circle cx="80" cy="240" r="6" fill="#94a3b8" stroke="#64748b" stroke-width="1.5"/>
+    <text x="80" y="265" text-anchor="middle" font-size="10" font-weight="700" fill="#64748b">2018</text>
+    <text x="80" y="278" text-anchor="middle" font-size="8" fill="#94a3b8">East Blue</text>
+    <text x="80" y="228" text-anchor="middle" font-size="9" fill="#94a3b8">account born</text>
+  </g>
+
+  <!-- 2019: Calm Belt -->
+  <g class="isle" style="animation-delay:0.5s">
+    <circle cx="180" cy="210" r="5" fill="#cbd5e1" stroke="#94a3b8" stroke-width="1"/>
+    <text x="180" y="232" text-anchor="middle" font-size="9" font-weight="700" fill="#94a3b8">2019</text>
+    <text x="180" y="244" text-anchor="middle" font-size="8" fill="#cbd5e1">calm belt</text>
+  </g>
+
+  <!-- 2020: Calm Belt -->
+  <g class="isle" style="animation-delay:0.8s">
+    <circle cx="260" cy="190" r="5" fill="#cbd5e1" stroke="#94a3b8" stroke-width="1"/>
+    <text x="260" y="212" text-anchor="middle" font-size="9" font-weight="700" fill="#94a3b8">2020</text>
+  </g>
+
+  <!-- 2021: Calm Belt -->
+  <g class="isle" style="animation-delay:1.1s">
+    <circle cx="340" cy="175" r="5" fill="#cbd5e1" stroke="#94a3b8" stroke-width="1"/>
+    <text x="340" y="197" text-anchor="middle" font-size="9" font-weight="700" fill="#94a3b8">2021</text>
+  </g>
+
+  <!-- 2022: Paradise -->
+  <g class="isle" style="animation-delay:1.4s">
+    <circle cx="420" cy="155" r="5" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+    <text x="420" y="177" text-anchor="middle" font-size="9" font-weight="700" fill="#94a3b8">2022</text>
+  </g>
+
+  <!-- 2023: Paradise -->
+  <g class="isle" style="animation-delay:1.7s">
+    <circle cx="490" cy="145" r="5" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+    <text x="490" y="167" text-anchor="middle" font-size="9" font-weight="700" fill="#94a3b8">2023</text>
+  </g>
+
+  <!-- 2024: New World entry -->
+  <g class="isle" style="animation-delay:2s">
+    <circle cx="560" cy="130" r="6" fill="#fcd34d" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="560" y="152" text-anchor="middle" font-size="9" font-weight="700" fill="#92400e">2024</text>
+    <text x="560" y="164" text-anchor="middle" font-size="8" fill="#d97706">new world</text>
+  </g>
+
+  <!-- 2025: First contributions — 40 -->
+  <g class="isle" style="animation-delay:2.3s">
+    <circle cx="660" cy="115" r="7" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+    <text x="660" y="140" text-anchor="middle" font-size="10" font-weight="700" fill="#92400e">2025</text>
+    <text x="660" y="152" text-anchor="middle" font-size="8" fill="#d97706">awakening</text>
+    <rect class="bar" x="648" y="98" width="24" height="17" rx="4" fill="#f59e0b" opacity="0.5" style="animation-delay:2.5s"/>
+    <text x="660" y="94" text-anchor="middle" font-size="8" font-weight="700" fill="#92400e">40</text>
+  </g>
+
+  <!-- 2026: Gear 5 — 426 contributions (current year, massive growth) -->
+  <g class="isle" style="animation-delay:2.8s">
+    <circle cx="830" cy="95" r="9" fill="#d97706" stroke="#92400e" stroke-width="2.5"/>
+    <text x="830" y="122" text-anchor="middle" font-size="11" font-weight="900" fill="#92400e">2026</text>
+    <text x="830" y="136" text-anchor="middle" font-size="9" fill="#d97706" font-weight="700">GEAR 5</text>
+    <rect class="bar" x="806" y="48" width="48" height="47" rx="6" fill="url(#gold)" opacity="0.8" style="animation-delay:3s"/>
+    <text x="830" y="44" text-anchor="middle" font-size="14" font-weight="900" fill="#92400e">426</text>
+  </g>
+
+  <!-- Monthly growth bars (2026 detail) -->
+  <g opacity="0.3">
+    <text x="680" y="195" font-size="8" fill="#94a3b8" letter-spacing="1">2026 MONTHLY</text>
+    <rect class="bar" x="680" y="220" width="18" height="4" rx="2" fill="#d97706" opacity="0.3" style="animation-delay:3.2s"/>
+    <text x="689" y="235" text-anchor="middle" font-size="6" fill="#94a3b8">J</text>
+    <rect class="bar" x="704" y="218" width="18" height="6" rx="2" fill="#d97706" opacity="0.35" style="animation-delay:3.3s"/>
+    <text x="713" y="235" text-anchor="middle" font-size="6" fill="#94a3b8">F</text>
+    <rect class="bar" x="728" y="204" width="18" height="20" rx="2" fill="#d97706" opacity="0.5" style="animation-delay:3.4s"/>
+    <text x="737" y="235" text-anchor="middle" font-size="6" fill="#94a3b8">M</text>
+    <rect class="bar" x="752" y="216" width="18" height="8" rx="2" fill="#d97706" opacity="0.38" style="animation-delay:3.5s"/>
+    <text x="761" y="235" text-anchor="middle" font-size="6" fill="#94a3b8">A</text>
+    <rect class="bar" x="776" y="178" width="18" height="46" rx="2" fill="#d97706" opacity="0.7" style="animation-delay:3.6s"/>
+    <text x="785" y="235" text-anchor="middle" font-size="6" fill="#94a3b8">M</text>
+    <rect class="bar" x="800" y="120" width="18" height="104" rx="2" fill="#d97706" opacity="1" style="animation-delay:3.7s"/>
+    <text x="809" y="235" text-anchor="middle" font-size="6" fill="#94a3b8">J</text>
+    <rect class="bar" x="824" y="202" width="18" height="22" rx="2" fill="#d97706" opacity="0.52" style="animation-delay:3.8s"/>
+    <text x="833" y="235" text-anchor="middle" font-size="6" fill="#94a3b8">J</text>
+  </g>
 
   <!-- Legend -->
-  <text x="36" y="190" font-size="10" fill="#cbd5e1">each bar = 1 day · taller = more contributions</text>
-  <circle cx="860" cy="186" r="3" fill="#22c55e"/>
-  <text x="870" y="190" font-size="10" fill="#94a3b8">today</text>
+  <circle cx="36" cy="305" r="4" fill="#cbd5e1"/>
+  <text x="46" y="309" font-size="9" fill="#94a3b8">dormant</text>
+  <circle cx="100" cy="305" r="4" fill="#fcd34d"/>
+  <text x="110" y="309" font-size="9" fill="#94a3b8">waking</text>
+  <circle cx="155" cy="305" r="4" fill="#d97706"/>
+  <text x="165" y="309" font-size="9" fill="#94a3b8">active</text>
+  <circle cx="210" cy="305" r="4" fill="#22c55e"/>
+  <text x="220" y="309" font-size="9" fill="#94a3b8">today</text>
+
+  <!-- Stats summary -->
+  <text x="904" y="309" font-size="9" fill="#cbd5e1" text-anchor="end">77 repos · 14 stars · 5 languages · 9 years on the Grand Line</text>
 </svg>
