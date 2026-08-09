@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regenerate assets/telemetry.svg — Grand Line journey with verified stats."""
+"""Regenerate assets/telemetry.svg — Grand Line journey, clean layout, no ship."""
 import json
 import os
 import urllib.request
@@ -13,7 +13,6 @@ query($login: String!) {
   user(login: $login) {
     repositories(ownerAffiliations: OWNER) { totalCount }
     followers { totalCount }
-    following { totalCount }
     contributionsCollection {
       contributionYears
       contributionCalendar {
@@ -40,60 +39,41 @@ def fetch():
     coll = user["contributionsCollection"]
     days = [d for w in coll["contributionCalendar"]["weeks"] for d in w["contributionDays"]]
     days.sort(key=lambda d: d["date"])
-
-    # Monthly breakdown for current year
     monthly = {}
     for d in days:
         ym = d["date"][:7]
         if ym not in monthly:
             monthly[ym] = 0
         monthly[ym] += d["contributionCount"]
-
     total_year = sum(d["contributionCount"] for d in days)
-
     repos = api(f"https://api.github.com/users/{LOGIN}/repos?per_page=100&type=all")
     total_stars = sum(r.get("stargazers_count", 0) for r in repos)
-
-    return {
-        "repos": user["repositories"]["totalCount"],
-        "stars": total_stars,
-        "followers": user["followers"]["totalCount"],
-        "following": user["following"]["totalCount"],
-        "years": len(coll["contributionYears"]),
-        "year_list": coll["contributionYears"],
-        "total_year": total_year,
-        "monthly": monthly,
-        "created": user["createdAt"][:4],
-    }
+    return {"repos": user["repositories"]["totalCount"], "stars": total_stars,
+            "years": len(coll["contributionYears"]), "total_year": total_year,
+            "monthly": monthly, "created": user["createdAt"][:4]}
 
 def generate(data):
-    # Build monthly bars for 2026
     months_2026 = {k: v for k, v in data["monthly"].items() if k.startswith("2026")}
-    max_monthly = max(months_2026.values()) if months_2026 else 1
-    month_labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-    monthly_bars = []
-    for i, label in enumerate(month_labels):
+    max_m = max(months_2026.values()) if months_2026 else 1
+    labels = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+    bars = []
+    for i, lbl in enumerate(labels):
         key = f"2026-{i+1:02d}"
         val = months_2026.get(key, 0)
-        bar_h = max(3, int(104 * val / max_monthly)) if max_monthly > 0 and val > 0 else 3
-        bar_y = 220 - bar_h
-        opacity = max(0.25, val / max_monthly) if max_monthly > 0 and val > 0 else 0.15
-        x = 680 + i * 22
-        monthly_bars.append(
-            f'<rect class="bar" x="{x}" y="{bar_y}" width="18" height="{bar_h}" rx="2" '
-            f'fill="#d97706" opacity="{opacity:.2f}" style="animation-delay:{3.2 + i*0.1:.1f}s"/>'
-        )
-        monthly_bars.append(f'<text x="{x+9}" y="235" text-anchor="middle" font-size="6" fill="#94a3b8">{label[0]}</text>')
+        if val == 0 and i > 7:
+            continue
+        h = max(3, int(94 * val / max_m)) if max_m > 0 and val > 0 else 3
+        y = 242 - h
+        op = max(0.20, val / max_m) if max_m > 0 and val > 0 else 0.15
+        x = 500 + i * 36
+        bars.append(f'<rect class="bar" x="{x}" y="{y}" width="28" height="{h}" rx="3" fill="#d97706" opacity="{op:.2f}" style="animation-delay:{2.2+i*0.1:.1f}s"/>')
+        bars.append(f'<text x="{x+14}" y="258" text-anchor="middle" font-size="8" fill="#94a3b8">{lbl}</text>')
 
-    monthly_svg = "\n  ".join(monthly_bars)
+    bars_svg = "\n  ".join(bars)
 
-    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 320" role="img" aria-label="Grand Line — contribution journey since {data["created"]}">
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 300" role="img" aria-label="Grand Line — contribution journey since {data["created"]}">
   <defs>
     <style>@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&amp;display=swap');</style>
-    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#f0f9ff" stop-opacity="0.3"/>
-      <stop offset="1" stop-color="#e0f2fe" stop-opacity="0.5"/>
-    </linearGradient>
     <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#f59e0b"/>
       <stop offset="1" stop-color="#d97706"/>
@@ -101,68 +81,44 @@ def generate(data):
   </defs>
   <style>
     text{{font-family:'Lato',sans-serif}}
-    @keyframes drawRoute{{from{{stroke-dashoffset:1200}}to{{stroke-dashoffset:0}}}}
-    .route{{stroke-dasharray:1200;animation:drawRoute 4s ease-out both}}
     @keyframes islandPop{{from{{opacity:0;transform:scale(0)}}to{{opacity:1;transform:scale(1)}}}}
     .isle{{animation:islandPop .4s ease-out both}}
     @keyframes barGrow{{from{{transform:scaleY(0)}}to{{transform:scaleY(1)}}}}
     .bar{{transform-box:fill-box;transform-origin:bottom;animation:barGrow .6s ease-out both}}
-    @keyframes shipSail{{from{{offset-distance:0%}}to{{offset-distance:100%}}}}
-    .ship{{offset-path:path('M80,240 C150,220 200,180 280,190 C360,200 380,140 460,150 C540,160 560,100 640,120 C720,140 740,80 820,100 C860,110 880,90 900,100');animation:shipSail 15s linear infinite}}
+    @keyframes drawRoute{{from{{stroke-dashoffset:900}}to{{stroke-dashoffset:0}}}}
+    .route{{stroke-dasharray:900;animation:drawRoute 3s ease-out both}}
   </style>
 
-  <rect width="940" height="320" fill="#fffef9" rx="12"/>
-  <rect x="20" y="60" width="900" height="220" rx="8" fill="url(#sea)" opacity="0.4"/>
+  <rect width="940" height="300" fill="#fffef9" rx="12"/>
 
-  <text x="36" y="32" font-size="10" font-weight="700" fill="#94a3b8" letter-spacing="3">GRAND LINE — CONTRIBUTION JOURNEY</text>
-  <text x="904" y="32" font-size="10" fill="#cbd5e1" text-anchor="end">{data["repos"]} repos · {data["total_year"]} contributions last year · sailing since {data["created"]}</text>
+  <text x="36" y="30" font-size="10" font-weight="700" fill="#94a3b8" letter-spacing="3">GRAND LINE — CONTRIBUTION JOURNEY</text>
+  <text x="904" y="30" font-size="10" fill="#cbd5e1" text-anchor="end">{data["repos"]} repos · {data["total_year"]} contributions last year · sailing since {data["created"]}</text>
 
-  <path class="route" d="M80,240 C150,220 200,180 280,190 C360,200 380,140 460,150 C540,160 560,100 640,120 C720,140 740,80 820,100 C860,110 880,90 900,100"
-        fill="none" stroke="#d97706" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.4"/>
+  <rect x="24" y="48" width="892" height="180" rx="8" fill="#f0f9ff" opacity="0.25"/>
 
-  <g class="ship">
-    <polygon points="0,-6 4,6 -4,6" fill="#92400e" stroke="#78350f" stroke-width="0.8"/>
-    <line x1="0" y1="-6" x2="0" y2="-11" stroke="#78350f" stroke-width="1"/>
-    <rect x="-1" y="-15" width="6" height="5" rx="1" fill="#dc2626" opacity="0.8"/>
+  <path class="route" d="M80,180 C140,170 180,150 240,155 C300,160 320,140 380,142 C440,144 460,125 520,128 C580,131 600,110 660,115 C720,120 740,95 800,100 C840,103 860,90 880,95"
+        fill="none" stroke="#d97706" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.35"/>
+
+  <g class="isle" style="animation-delay:0.1s"><circle cx="80" cy="180" r="5" fill="#94a3b8" stroke="#64748b" stroke-width="1.5"/><text x="80" y="168" text-anchor="middle" font-size="8" fill="#94a3b8">account born</text><text x="80" y="200" text-anchor="middle" font-size="10" font-weight="700" fill="#64748b">2018</text><text x="80" y="213" text-anchor="middle" font-size="8" fill="#94a3b8">East Blue</text></g>
+  <g class="isle" style="animation-delay:0.3s"><circle cx="170" cy="160" r="4" fill="#cbd5e1" stroke="#94a3b8" stroke-width="1"/><text x="170" y="180" text-anchor="middle" font-size="9" font-weight="700" fill="#94a3b8">2019</text></g>
+  <g class="isle" style="animation-delay:0.5s"><circle cx="250" cy="152" r="4" fill="#cbd5e1" stroke="#94a3b8" stroke-width="1"/><text x="250" y="172" text-anchor="middle" font-size="9" font-weight="700" fill="#94a3b8">2020</text></g>
+  <g class="isle" style="animation-delay:0.7s"><circle cx="330" cy="142" r="4" fill="#cbd5e1" stroke="#94a3b8" stroke-width="1"/><text x="330" y="162" text-anchor="middle" font-size="9" font-weight="700" fill="#94a3b8">2021</text></g>
+  <g class="isle" style="animation-delay:0.9s"><circle cx="410" cy="135" r="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/><text x="410" y="155" text-anchor="middle" font-size="9" font-weight="700" fill="#94a3b8">2022</text></g>
+  <g class="isle" style="animation-delay:1.1s"><circle cx="490" cy="128" r="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/><text x="490" y="148" text-anchor="middle" font-size="9" font-weight="700" fill="#94a3b8">2023</text></g>
+  <g class="isle" style="animation-delay:1.3s"><circle cx="570" cy="118" r="5" fill="#fcd34d" stroke="#f59e0b" stroke-width="1.5"/><text x="570" y="138" text-anchor="middle" font-size="9" font-weight="700" fill="#92400e">2024</text><text x="570" y="151" text-anchor="middle" font-size="8" fill="#d97706">new world</text></g>
+  <g class="isle" style="animation-delay:1.6s"><circle cx="680" cy="110" r="6" fill="#f59e0b" stroke="#d97706" stroke-width="2"/><text x="680" y="96" text-anchor="middle" font-size="10" font-weight="700" fill="#92400e">40</text><text x="680" y="130" text-anchor="middle" font-size="10" font-weight="700" fill="#92400e">2025</text><text x="680" y="143" text-anchor="middle" font-size="8" fill="#d97706">awakening</text></g>
+  <g class="isle" style="animation-delay:2s"><circle cx="840" cy="92" r="8" fill="#d97706" stroke="#92400e" stroke-width="2.5"/><text x="840" y="76" text-anchor="middle" font-size="16" font-weight="900" fill="#92400e">{data["total_year"]}</text><text x="840" y="114" text-anchor="middle" font-size="11" font-weight="900" fill="#92400e">2026</text><text x="840" y="128" text-anchor="middle" font-size="9" fill="#d97706" font-weight="700">GEAR 5</text></g>
+
+  <text x="500" y="200" font-size="8" font-weight="700" fill="#94a3b8" letter-spacing="2">2026 MONTHLY BREAKDOWN</text>
+  {bars_svg}
+
+  <g transform="translate(36, 268)">
+    <circle cx="0" cy="0" r="3.5" fill="#cbd5e1"/><text x="10" y="4" font-size="9" fill="#94a3b8">dormant</text>
+    <circle cx="70" cy="0" r="3.5" fill="#fcd34d"/><text x="80" y="4" font-size="9" fill="#94a3b8">waking</text>
+    <circle cx="130" cy="0" r="3.5" fill="#d97706"/><text x="140" y="4" font-size="9" fill="#94a3b8">active</text>
+    <circle cx="185" cy="0" r="3.5" fill="#22c55e"/><text x="195" y="4" font-size="9" fill="#94a3b8">today</text>
   </g>
-
-  <!-- Year islands -->
-  <g class="isle" style="animation-delay:0.2s"><circle cx="80" cy="240" r="6" fill="#94a3b8" stroke="#64748b" stroke-width="1.5"/><text x="80" y="265" text-anchor="middle" font-size="10" font-weight="700" fill="#64748b">2018</text><text x="80" y="278" text-anchor="middle" font-size="8" fill="#94a3b8">East Blue</text></g>
-  <g class="isle" style="animation-delay:0.5s"><circle cx="180" cy="210" r="5" fill="#cbd5e1" stroke="#94a3b8" stroke-width="1"/><text x="180" y="232" text-anchor="middle" font-size="9" font-weight="700" fill="#94a3b8">2019</text></g>
-  <g class="isle" style="animation-delay:0.8s"><circle cx="260" cy="190" r="5" fill="#cbd5e1" stroke="#94a3b8" stroke-width="1"/><text x="260" y="212" text-anchor="middle" font-size="9" font-weight="700" fill="#94a3b8">2020</text></g>
-  <g class="isle" style="animation-delay:1.1s"><circle cx="340" cy="175" r="5" fill="#cbd5e1" stroke="#94a3b8" stroke-width="1"/><text x="340" y="197" text-anchor="middle" font-size="9" font-weight="700" fill="#94a3b8">2021</text></g>
-  <g class="isle" style="animation-delay:1.4s"><circle cx="420" cy="155" r="5" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/><text x="420" y="177" text-anchor="middle" font-size="9" font-weight="700" fill="#94a3b8">2022</text></g>
-  <g class="isle" style="animation-delay:1.7s"><circle cx="490" cy="145" r="5" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/><text x="490" y="167" text-anchor="middle" font-size="9" font-weight="700" fill="#94a3b8">2023</text></g>
-  <g class="isle" style="animation-delay:2s"><circle cx="560" cy="130" r="6" fill="#fcd34d" stroke="#f59e0b" stroke-width="1.5"/><text x="560" y="152" text-anchor="middle" font-size="9" font-weight="700" fill="#92400e">2024</text><text x="560" y="164" text-anchor="middle" font-size="8" fill="#d97706">new world</text></g>
-
-  <!-- 2025: First contributions -->
-  <g class="isle" style="animation-delay:2.3s">
-    <circle cx="660" cy="115" r="7" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
-    <text x="660" y="140" text-anchor="middle" font-size="10" font-weight="700" fill="#92400e">2025</text>
-    <text x="660" y="152" text-anchor="middle" font-size="8" fill="#d97706">awakening</text>
-  </g>
-
-  <!-- 2026: Gear 5 -->
-  <g class="isle" style="animation-delay:2.8s">
-    <circle cx="830" cy="95" r="9" fill="#d97706" stroke="#92400e" stroke-width="2.5"/>
-    <text x="830" y="122" text-anchor="middle" font-size="11" font-weight="900" fill="#92400e">2026</text>
-    <text x="830" y="136" text-anchor="middle" font-size="9" fill="#d97706" font-weight="700">GEAR 5</text>
-    <rect class="bar" x="806" y="48" width="48" height="47" rx="6" fill="url(#gold)" opacity="0.8" style="animation-delay:3s"/>
-    <text x="830" y="44" text-anchor="middle" font-size="14" font-weight="900" fill="#92400e">{data["total_year"]}</text>
-  </g>
-
-  <!-- Monthly breakdown 2026 -->
-  <g opacity="0.35">
-    <text x="680" y="195" font-size="8" fill="#94a3b8" letter-spacing="1">2026 MONTHLY</text>
-    {monthly_svg}
-  </g>
-
-  <!-- Legend -->
-  <circle cx="36" cy="305" r="4" fill="#cbd5e1"/><text x="46" y="309" font-size="9" fill="#94a3b8">dormant</text>
-  <circle cx="100" cy="305" r="4" fill="#fcd34d"/><text x="110" y="309" font-size="9" fill="#94a3b8">waking</text>
-  <circle cx="155" cy="305" r="4" fill="#d97706"/><text x="165" y="309" font-size="9" fill="#94a3b8">active</text>
-  <circle cx="210" cy="305" r="4" fill="#22c55e"/><text x="220" y="309" font-size="9" fill="#94a3b8">today</text>
-  <text x="904" y="309" font-size="9" fill="#cbd5e1" text-anchor="end">{data["repos"]} repos · {data["stars"]} stars · 5 languages · {data["years"]} years on the Grand Line</text>
+  <text x="904" y="280" font-size="9" fill="#cbd5e1" text-anchor="end">{data["repos"]} repos · {data["stars"]} stars · 5 languages · {data["years"]} years on the Grand Line</text>
 </svg>'''
 
     with open(os.path.join(ROOT, "telemetry.svg"), "w") as f:
