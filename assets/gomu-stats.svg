@@ -32,13 +32,13 @@
   <!-- REPOS -->
   <g class="c1">
     <text x="36" y="52" font-size="10" font-weight="700" fill="#94a3b8" letter-spacing="3">REPOS</text>
-    <text x="36" y="92" font-size="38" font-weight="900" fill="#1e293b">77</text>
+    <text x="36" y="92" font-size="38" font-weight="900" fill="#1e293b">87</text>
   </g>
 
   <!-- CONTRIBUTIONS (last year) -->
   <g class="c2">
     <text x="185" y="52" font-size="10" font-weight="700" fill="#94a3b8" letter-spacing="3">LAST YEAR</text>
-    <text x="185" y="92" font-size="38" font-weight="900" fill="#1e293b">426</text>
+    <text x="185" y="92" font-size="38" font-weight="900" fill="#1e293b">437</text>
   </g>
 
   <!-- STARS -->
