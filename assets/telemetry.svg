@@ -81,13 +81,13 @@
   <!-- 2026: Gear 5 -->
   <g class="isle" style="animation-delay:2s">
     <circle cx="860" cy="110" r="12" fill="#d97706" stroke="#92400e" stroke-width="3"/>
-    <text x="860" y="82" text-anchor="middle" font-size="20" font-weight="900" fill="#92400e">426</text>
-    <text x="860" y="138" text-anchor="middle" font-size="12" font-weight="900" fill="#92400e">2026</text>
-    <text x="860" y="156" text-anchor="middle" font-size="10" fill="#d97706" font-weight="700">GEAR 5</text>
+    <text x="860" y="65" text-anchor="middle" font-size="20" font-weight="900" fill="#92400e">426</text>
+    <text x="860" y="145" text-anchor="middle" font-size="12" font-weight="900" fill="#92400e">2026</text>
+    <text x="860" y="163" text-anchor="middle" font-size="10" fill="#d97706" font-weight="700">GEAR 5</text>
   </g>
 
   <!-- Separator -->
-  <line x1="36" y1="180" x2="904" y2="180" stroke="#f1f5f9" stroke-width="1"/>
+  <line x1="36" y1="186" x2="904" y2="186" stroke="#f1f5f9" stroke-width="1"/>
 
   <!-- 2026 Monthly breakdown -->
   <text x="36" y="205" font-size="9" font-weight="700" fill="#94a3b8" letter-spacing="2">2026 MONTHLY BREAKDOWN</text>
