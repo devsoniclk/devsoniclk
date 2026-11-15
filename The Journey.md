@@ -1,5 +1,3 @@
-
-
 <img src="assets/hero.svg" alt="devsoniclk" width="100%">
 
 <br>
