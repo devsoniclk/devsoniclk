@@ -30,6 +30,9 @@
 
 | Repository | Focus | Capabilities |
 | :--- | :--- | :--- |
+| **[`rollback`](https://github.com/devsoniclk/rollback)** | **Agent Tool Rollback Engine** | Transactional filesystem & state rollback engine for autonomous AI coding agents — <2ms micro-checkpoints, atomic reverts, and unified diff inspection. |
+| **[`solana-tx-lens`](https://github.com/devsoniclk/solana-tx-lens)** | **Solana Simulation Inspector** | Headless transaction simulation inspector, recursive CPI tree visualizer, and Anchor custom error decoder for Solana. |
+| **[`agent-witness`](https://github.com/devsoniclk/agent-witness)** | **Cryptographic Action Attestation** | RFC 6962 Merkle Action Trees & verifiable `.witness` audit receipts for autonomous AI agents, verified on-chain via Solidity. |
 | **[`agent-canary`](https://github.com/devsoniclk/agent-canary)** | **Zero-Knowledge Canaries** | Cryptographic honeytokens and taint tripwires for autonomous AI agents — zero false-positive prompt injection detection. |
 | **[`polymarket-depth`](https://github.com/devsoniclk/polymarket-depth)** | **CLOB Depth & Arbitrage** | Real-time L2/L3 orderbook depth reconstructor and cross-outcome probability arbitrage scanner for Polymarket. |
 | **[`solana-jito-core`](https://github.com/devsoniclk/solana-jito-core)** | **Jito MEV Bundler SDK** | Lightweight Python SDK for building, simulating, and broadcasting sandwich-proof atomic transaction bundles. |
