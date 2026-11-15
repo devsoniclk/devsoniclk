@@ -30,6 +30,9 @@
 
 | Repository | Focus | Capabilities |
 | :--- | :--- | :--- |
+| **[`agent-canary`](https://github.com/devsoniclk/agent-canary)** | **Zero-Knowledge Canaries** | Cryptographic honeytokens and taint tripwires for autonomous AI agents — zero false-positive prompt injection detection. |
+| **[`polymarket-depth`](https://github.com/devsoniclk/polymarket-depth)** | **CLOB Depth & Arbitrage** | Real-time L2/L3 orderbook depth reconstructor and cross-outcome probability arbitrage scanner for Polymarket. |
+| **[`solana-jito-core`](https://github.com/devsoniclk/solana-jito-core)** | **Jito MEV Bundler SDK** | Lightweight Python SDK for building, simulating, and broadcasting sandwich-proof atomic transaction bundles. |
 | **[`mcp-shield`](https://github.com/devsoniclk/mcp-shield)** | **MCP Security Gateway** | Real-time scanner for prompt injection, secret exfiltration, and unauthorized tool calls across Model Context Protocol servers. |
 | **[`tripwire`](https://github.com/devsoniclk/tripwire)** | **Agent Cost Circuit Breaker** | Prevents runaway autonomous loops and token budget burn before cloud bill shock. |
 | **[`jev-polymarket-executor`](https://github.com/devsoniclk/jev-polymarket-executor)** | **Polymarket CLOB Engine** | Automated probability mispricing detection, orderbook streaming, and paper/live trading execution. |
